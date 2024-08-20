@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterType= document.querySelectorAll('.typeText');
     const filterGender= document.querySelectorAll('.genderElement');
     const filterBtn= document.querySelectorAll('.filter-btn');
-    const cancelBtn=document.querySelectorAll('.cancelBtn');
+    const cancelBtn=document.querySelectorAll('.cancel-btn');
 
     function renderCharacter(characterData) {
         const character = document.createElement('div');
@@ -121,18 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function pagination_TotalShowing(data){
-        const total= document.getElementById('totalCount');
-        const showing= document.getElementById('showing');
-        if(characterContainer){
-            total.innerText= data.info.count;
-            showing.innerText=`Showing ${(data.results).length}`;
-        }
-        else{
-            total.innerText= 0;
-            showing.innerText='Showing 0';
-        }
-        
-
         const backPages = document.querySelectorAll('.backPage');
         const nextPages = document.querySelectorAll('.nextPage');
 
@@ -154,10 +142,23 @@ document.addEventListener('DOMContentLoaded', () => {
             nextBtn.style.display = data.info.next === null ? "none" : "flex";
         });
 
-        // Toplam sayfa güncellemesi
-        currentTotals.forEach(currentTotal => {
-            currentTotal.innerHTML = `${currentPage}/${data.info.pages}`;
-        });
+        const total= document.getElementById('totalCount');
+        const showing= document.getElementById('showing');
+        if(characterContainer){
+            total.innerText= data.info.count;
+            showing.innerText=`Showing ${(data.results).length}`;
+            currentTotals.forEach(currentTotal => {
+                currentTotal.innerHTML = `${currentPage}/${data.info.pages}`;
+            });
+        }
+        else{
+            total.innerHTML=0 ;
+            showing.innerHTML='Showing 0';
+            currentTotals.forEach(currentTotal=>{
+                currentTotal.innerHTML="1/1";
+            })
+        }
+        
     }
     backBtns.forEach(backBtn => {
         backBtn.addEventListener('click', () => {
@@ -212,11 +213,37 @@ document.addEventListener('DOMContentLoaded', () => {
         loadCharacters(filterURL);
     }
 
+    function resetFilter(url){
+        filterName.forEach(fn => {
+            fn.value=""
+        });
+        filterStatus.forEach(fsts => {
+            fsts.selectedIndex=0;
+        });
+        filterSpecies.forEach(fspcs => {
+            fspcs.value="";
+        });
+        filterType.forEach(ft => {
+            ft.value="";
+        });
+        filterGender.forEach(fg => {
+            fg.selectedIndex=0;
+        });
+        loadCharacters(url)
+    }
+
     filterBtn.forEach(btn=>{
         btn.addEventListener('click',()=>{
             characterContainer.innerHTML="";
-            filterCharacter(currentUrl)
+            filterCharacter(currentUrl) 
         });
+    })
+
+    cancelBtn.forEach(btn=>{
+        btn.addEventListener('click',()=>{
+            characterContainer.innerHTML="";
+            resetFilter(currentUrl);
+        })
     })
     
     
