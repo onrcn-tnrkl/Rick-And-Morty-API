@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Rubik, Montserrat, sans-serif;
+    background-color: #1A202C;
+    color:white;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+header{
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1)
+
+}
+
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+    margin:30px 50px;
+    color:white;
+}
+
+.header-inner .baslik{
+    display: flex;
+    align-items: center;
+}
+
+.header-inner .baslik svg{
+    width:35px;
+    height: 35px;
+}
+.header-inner .baslik  h2{
+    padding:0px 15px;
+}
+
+.header-inner i{
+    font-size: 30px;
+    color:white;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}

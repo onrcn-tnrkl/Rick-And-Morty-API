@@ -1,0 +1,173 @@
+@import url("common.css");
+
+.goback-btn{
+    display: flex;
+    color:#90cdf4;
+    margin:10px  0px 0px 10px;
+    padding:0px 16px;
+    font-size:16px;
+    font-weight: 600;
+    cursor: pointer;
+    height: 40px;
+    width: 130px;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 4px;
+}
+.goback-btn:hover{
+    background-color: #2e384b;
+}
+
+.character-description{
+    display: flex;
+    justify-content: space-between;
+    width:900px;
+    padding:20px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+.character-info{
+    width: auto;
+    height: auto;
+    padding: 15px 0px 0px;
+    margin:0px 20px 0px 0px;
+}
+
+.details1 img{
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 50%;
+    margin:0px 100px;
+}
+.details1 #characterName{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.details1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:auto;
+    height: auto;
+}
+.details1 hr{
+    opacity:0.6;
+    width:auto;
+    margin: 8px auto;
+    border-width:0px 0px 1px;
+}
+.infoDiv{
+    padding:20px 15px;
+    text-transform: capitalize;
+    width: 100%;
+}
+.infoDiv div{
+    display: flex;
+    margin-bottom:10px;
+}
+.infoDiv .infoHeader{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.infoDiv h2{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color:rgb(160, 174, 192);
+    margin-right:10px;
+}
+.infoDiv .hrDiv, .featured-in .hrDiv{
+    display: flex;
+    flex:1 1 0%;
+    height: 1px;
+    background-color: rgb(237,242,247);
+    align-self: center;
+}
+
+.infoDiv p {
+    font-size: 18px;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.infoDiv .status .statusValue, 
+.infoDiv .status .statusValue i {
+    font-size: 18px;
+    padding-right: 5px;
+    color: #319795;
+}
+
+.infoDiv .gender .genderValue, 
+.infoDiv .gender .genderValue i {
+    font-size: 18px;
+    padding-right: 5px;
+    color: #4299E1;
+}
+
+.infoDiv .type .typeValue, 
+.infoDiv .type .typeValue i, 
+.infoDiv .origin .originValue, 
+.infoDiv .origin .originValue i, 
+.infoDiv .location .locationValue, 
+.infoDiv .location .locationValue i {
+    padding-right: 5px;
+}
+
+
+.character-info, .character-episodes{
+    box-shadow:rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px
+}
+
+.character-episodes{
+    width:auto;
+    padding:30px;
+    margin-bottom:15px;
+}
+.featured-in{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}   
+.featured-in h2{
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color:rgb(160, 174, 192);
+    margin-right: 10px;
+}
+
+.episode{
+    margin-bottom:10px
+}
+.episode .episode-name{
+    font-size:15px;
+}
+.episode .episode-date{
+    margin-left:20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color:rgb(74, 85, 104);
+
+}
+
+@media (max-width:880px){
+    .character-description{
+        flex-wrap: wrap;
+    }
+    .character-info,.details1,.infoDiv, .character-episodes{
+        width:100%
+    }
+    .character-info, .character-episodes{
+        padding:20px;
+    }
+}
+
+
